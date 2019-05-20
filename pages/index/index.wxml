@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <imgsUploader max="6" sizeType="{{['compressed']}}" sourceType="{{['album']}}" bindgetimgs="getImgs"></imgsUploader>
+</view>

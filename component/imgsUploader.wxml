@@ -1,0 +1,25 @@
+<!--component/imgsUploader.wxml-->
+
+<view class='container'>
+  <view class='tishi'>
+    <image src='/images/icon_prompt_disabled.png' mode='widthFix' class='icon'></image>
+    <view>最多可上传{{max}}张照片，您已上传{{imgUrls.length}}张</view>
+  </view>
+
+  <view class='box'>
+    <block wx:for='{{imgUrls}}' wx:key="this" wx:for-index="idx">
+      <view class='imgbox'>
+        <image class='car-img' src='{{item}}' data-src='{{item}}' data-index='{{idx}}' mode='aspectFill' bindtap='showAction'></image>
+        <view hidden='{{idx!=0}}' class='fengmian'>封面</view>
+      </view>
+    </block> 
+
+    <view class='imgbox' wx:if="{{imgUrls.length<max}}" bindtap='chooseImg'>
+      <image class='car-img' src='/images/icon_add.png' mode='aspectFill'></image>
+    </view>
+  </view>
+
+  <!-- <view class='btn'>
+    <view class='confirmbtn' bindtap='toTransferImgs'>提交</view>
+  </view> -->
+</view>
